@@ -1,0 +1,103 @@
+:root {
+  --bg: #F4F4F7;
+  --surface: #FFFFFF;
+  --raised: #E9E9EF;
+  --line: #D9D9E1;
+  --text: #111117;
+  --body: #36363F;
+  --muted: #585864;
+  --green: #16A34A;
+  --green-ink: #06210F;
+  --blue: #2563EB;
+  --amber: #D97706;
+  --red: #DC2626;
+  --cyan: #0891B2;
+  --grey: #6B7280;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0D0D12;
+    --surface: #16161E;
+    --raised: #20202A;
+    --line: #2A2A35;
+    --text: #F5F5F7;
+    --body: #C9C9D3;
+    --muted: #A1A1AD;
+    --green: #22C55E;
+    --blue: #60A5FA;
+    --amber: #F59E0B;
+    --red: #EF4444;
+    --cyan: #22D3EE;
+    --grey: #9CA3AF;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--green); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+h1, h2, h3 { color: var(--text); line-height: 1.15; letter-spacing: -0.02em; }
+h1 { font-size: clamp(40px, 8vw, 64px); margin: 0 0 12px; font-weight: 800; }
+h2 { font-size: 26px; margin: 48px 0 12px; }
+h3 { font-size: 18px; margin: 28px 0 6px; }
+p, li { max-width: 68ch; }
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 800; font-size: 20px; letter-spacing: -0.02em; }
+.brand img { width: 34px; height: 34px; border-radius: 9px; }
+.brand .dot, .wordmark .dot { color: var(--green); }
+.nav-links { display: flex; gap: 18px; font-size: 15px; }
+.nav-links a { color: var(--muted); text-decoration: none; }
+.nav-links a:hover { color: var(--text); }
+
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; padding: 40px 0 24px; }
+.hero .lede { font-size: 21px; color: var(--muted); margin: 0 0 28px; }
+.wordmark { font-weight: 800; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.button { display: inline-block; background: var(--green); color: var(--green-ink); font-weight: 700; text-decoration: none; padding: 14px 22px; border-radius: 999px; }
+.button.secondary { background: var(--raised); color: var(--text); }
+.note { font-size: 14px; color: var(--muted); }
+
+/* A little stack of cards, like the app */
+.stack { position: relative; height: 360px; max-width: 320px; margin: 0 auto; width: 100%; }
+.card { position: absolute; left: 0; right: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 20px 22px; box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+.card .from { color: var(--text); font-weight: 700; }
+.card .subject { color: var(--body); font-size: 15px; margin-top: 4px; }
+.card .bar { height: 6px; border-radius: 3px; margin-bottom: 14px; width: 54px; }
+.card.c3 { top: 0; transform: scale(0.88); opacity: 0.55; }
+.card.c2 { top: 26px; transform: scale(0.94); opacity: 0.8; }
+.card.c1 { top: 56px; transform: rotate(-4deg); }
+.card .lines span { display: block; height: 9px; border-radius: 5px; background: var(--raised); margin-top: 10px; }
+.card .lines span:nth-child(2) { width: 82%; }
+.card .lines span:nth-child(3) { width: 64%; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 20px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+.tile b { display: block; color: var(--text); margin-bottom: 4px; }
+.tile p { margin: 0; font-size: 15px; color: var(--muted); }
+.chip { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 24px; margin-top: 20px; }
+
+.doc { max-width: 760px; padding-bottom: 40px; }
+.doc h1 { font-size: clamp(34px, 6vw, 46px); margin-top: 24px; }
+.doc .meta { color: var(--muted); margin-top: 0; }
+.doc ul { padding-left: 22px; }
+.doc li { margin: 6px 0; }
+.callout { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--green); border-radius: 14px; padding: 16px 18px; margin: 20px 0; }
+
+footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 26px 0 40px; font-size: 14px; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+footer a { color: var(--muted); margin-right: 16px; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 16px; }
+  .stack { height: 300px; }
+  .nav-links { gap: 14px; }
+}
+.card.c2 .from, .card.c2 .subject, .card.c3 .from, .card.c3 .subject { visibility: hidden; }
