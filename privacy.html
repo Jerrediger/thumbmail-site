@@ -20,7 +20,7 @@
 
 <main class="wrap doc">
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective October 30, 2026</p>
+  <p class="meta">Effective November 6, 2026</p>
 
   <p>Thumbmail (“Thumbmail”, “we”, “us”) is an iPhone email app that shows the mail from your accounts one card at a time. This policy explains what the app does with your information.</p>
 
@@ -30,7 +30,7 @@
   <ul>
     <li>When you add an account, you sign in directly with your provider (Google, Microsoft, or an IMAP provider such as Yahoo, AOL or iCloud). Thumbmail then connects from your iPhone to that provider to read, archive, star, forward, delete, mark as read, mark as spam and send mail when you ask it to.</li>
     <li>Sign-in tokens and app passwords are stored in your iPhone's Keychain. They are never sent to us.</li>
-    <li>To open quickly, Thumbmail keeps a cache of message headers (sender, subject, date and a short preview) in the app's storage on your iPhone. Message contents are fetched from your provider when you open them and are not sent anywhere else.</li>
+    <li>To open quickly, Thumbmail keeps a cache of message headers (sender, recipients, subject, date and a short preview) in the app's storage on your iPhone. Message contents are fetched from your provider when you open them and are not sent anywhere else.</li>
     <li>If you use a signature, Thumbmail reads your existing Gmail signature from your Google account, or saves the one you type on your iPhone.</li>
   </ul>
 
@@ -41,7 +41,8 @@
   <p>Stack reminders and new-email alerts are created on your iPhone. When iOS lets Thumbmail refresh in the background, the app checks your inboxes directly with your provider and shows a local notification. No notification server is involved and nothing is sent to us.</p>
 
   <h2>Writing replies with AI (optional)</h2>
-  <p>If you connect your own AI provider account (OpenRouter, Anthropic, OpenAI or Google Gemini), Thumbmail sends the email you are replying to, and any instruction you give, from your iPhone directly to that provider using your own key, only when you ask for a suggested reply. That provider handles it under its own terms and privacy policy. We do not receive it. If you never connect an AI provider, nothing is sent to one. Your AI key is stored in your iPhone's Keychain.</p>
+  <p>AI replies are off unless you connect your own AI provider account (Anthropic, OpenAI, OpenRouter or Google Gemini). When one is connected and you start a reply, Thumbmail sends the email you are replying to, and any instruction you give, from your iPhone directly to that provider using your own key, to suggest and draft the reply. That provider handles it under its own terms and privacy policy. We do not receive it. If you never connect an AI provider, nothing is sent to one. Your AI key is stored in your iPhone's Keychain.</p>
+  <p>For Gmail inboxes, AI replies only work with Anthropic or OpenAI, whose API terms do not use the content you send to train their models. Gmail email is never sent to OpenRouter or Gemini, because some of the models available there may use what they receive for training.</p>
 
   <h2 id="google">Google user data</h2>
   <p>Thumbmail asks for access to your Gmail account (the <code>gmail.modify</code> scope) so that it can show your inbox and carry out the actions you choose: reading messages, archiving, starring, marking as read, moving to spam or trash, sending replies and forwards, and reading your Gmail signature. It also reads your basic profile (your email address) to label the account in the app.</p>
@@ -49,17 +50,34 @@
   <ul>
     <li>Gmail data is used only to provide and improve the user-facing email features of Thumbmail that you see in the app.</li>
     <li>Gmail data is processed on your iPhone. It is not sent to, stored on or accessible from any server operated by us.</li>
-    <li>Gmail data is not transferred to anyone, except to an AI provider you connect yourself, and only the message you ask Thumbmail to draft a reply to, at the moment you ask. It is also transferred when necessary to comply with applicable law.</li>
+    <li>Gmail data is not transferred to anyone, except, if you connect your own Anthropic or OpenAI account, the one message you are replying to, sent from your iPhone to that provider to draft the reply. These providers do not use API content to train their models. Gmail data is never transferred to an AI service that uses it for training. It is also transferred when necessary to comply with applicable law.</li>
     <li>Gmail data is never used for advertising, including retargeting or personalized or interest-based ads, and is never sold.</li>
     <li>No human reads your Gmail data. We have no access to it.</li>
     <li>Gmail data is not used to develop, improve or train generalized or non-personalized AI or machine-learning models.</li>
   </ul>
+  <p>The use of raw or derived user data received from Google Workspace APIs, including Gmail, adheres to the Google User Data Policy, including the Limited Use requirements.</p>
 
   <h2>Microsoft and other providers</h2>
   <p>Outlook and Microsoft 365 accounts are accessed through Microsoft Graph, and other accounts through IMAP and SMTP, in the same way: directly from your iPhone, only to show and manage your mail at your request.</p>
 
   <h2>What we collect</h2>
   <p>Nothing. Thumbmail has no analytics, advertising or tracking SDKs, and no account with us. Subscriptions to Thumbmail Pro are handled entirely by Apple; we see only the anonymous sales reports Apple provides to developers. If you install a test version through TestFlight, Apple may share crash reports and any feedback you choose to send, under Apple's terms.</p>
+
+  <h2>How your data is protected</h2>
+  <ul>
+    <li>Everything moves over encrypted connections (HTTPS and TLS) directly between your iPhone and Google, Microsoft, your email provider or the AI provider you connect.</li>
+    <li>Sign-in tokens, app passwords and AI keys are kept in the iPhone Keychain, which iOS encrypts and keeps for Thumbmail alone.</li>
+    <li>Cached email headers and settings live in Thumbmail's private storage on your iPhone, protected by iOS file encryption and an optional Face ID or passcode lock in the app.</li>
+    <li>There is no Thumbmail server or database, so there is nothing of yours for us to lose, leak or hand over.</li>
+  </ul>
+
+  <h2>How long data is kept</h2>
+  <ul>
+    <li>Message headers (sender, recipients, subject, date and a short preview) are cached on your iPhone for the inboxes you add, covering the time window you choose (1 to 30 days), and are removed as mail leaves that window or your inbox.</li>
+    <li>Full message contents are loaded from your provider to show your cards and are held only in memory while Thumbmail is open. They are never written to storage.</li>
+    <li>Importance learnings, signatures and settings stay on your iPhone until you remove the account or delete the app.</li>
+    <li>We keep nothing, because nothing reaches us.</li>
+  </ul>
 
   <h2>Deleting your data</h2>
   <p>Removing an account in Thumbmail deletes its saved sign-in, its cached headers and everything Thumbmail learned about it from your iPhone. Deleting the app removes everything Thumbmail stored. You can also revoke Thumbmail's access at any time from your <a href="https://myaccount.google.com/permissions">Google account</a> or Microsoft account settings.</p>
